@@ -950,7 +950,7 @@ footer {
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
-        padding: 1rem !important;
+        padding: 0.9rem !important; /* slightly less padding to reduce height */
         max-width: 90% !important;
         background: rgba(0, 0, 0, 0.45) !important;
         border-radius: 10px !important;
@@ -959,14 +959,14 @@ footer {
 
     .hero-overlay h1 {
         font-size: clamp(20px, 6vw, 32px) !important;
-        margin: 0 0 0.5rem 0 !important; /* remove large top margin */
+        margin: 0 0 0.45rem 0 !important; /* slightly smaller bottom margin */
         line-height: 1.2 !important;
         color: white !important;
     }
 
     .hero-overlay p {
         font-size: clamp(12px, 3vw, 16px) !important;
-        margin: 0 0 1rem 0 !important; /* remove large top margin */
+        margin: 0 0 0.9rem 0 !important; /* slightly smaller bottom margin */
         color: white !important;
         max-width: 100% !important;
     }
@@ -974,7 +974,7 @@ footer {
     .hero-overlay .cta-buttons {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.6rem !important;
+        gap: 0.5rem !important; /* reduced gap */
         justify-content: center !important;
         width: 100% !important;
     }
@@ -983,13 +983,13 @@ footer {
         width: 100% !important;
         text-align: center !important;
         font-size: 0.95rem !important;
-        padding: 0.6rem 0 !important;
+        padding: 0.55rem 0 !important; /* slightly smaller padding */
     }
 
     /* Navigation Arrows */
     .arrow {
-        font-size: 1.2rem !important;
-        padding: 0.3rem 0.6rem !important;
+        font-size: 1.1rem !important;
+        padding: 0.25rem 0.5rem !important;
     }
 }
 
@@ -2040,6 +2040,7 @@ header {
         font-size: 1rem !important;
     }
 }
+
 
 
 
