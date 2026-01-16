@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track | Guardian Hold Security Company</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+
+
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* ================= BASE ================= */
+:root {
+    --white: #ffffff;
+    --dark-color: #111827;       /* background for header, body, footer */
+    --accent-color: #f1c644;     /* gold accent */
+    --primary-color: #ffffff;    /* text in header/logo */
+    --secondary-color: #f1c644;  /* hover color for nav links */
+    --text-dark: #ffffff;        /* nav links color */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+    background: var(--dark-color);
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; 
+    width: 90%;
+    max-width: 900px;
+    margin: 120px auto 40px;
+    padding: 120px 2rem 2rem;
+}
+/* ---------------- Track Page - Responsive ---------------- */
+@media (max-width: 768px) {
+    main {
+        width: 95% !important;         /* almost full width on small screens */
+        max-width: 100% !important;    /* remove desktop max-width */
+        margin: 60px auto 20px !important;  /* top margin = header height, less bottom */
+        padding: 80px 1rem 1rem !important; /* reduce padding for small screens */
+        box-sizing: border-box !important;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: var(--dark-color);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.header-container img {
+    width: 45px;
+}
+
+/* ================= VERIFY BOX ================= */
+.verify-box {
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.verify-box p {
+    max-width: 420px;   
+    margin: 0 auto 12px auto;
+}
+
+.verify-box input {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: none;
+    margin: 0 auto 15px auto;
+    display: block;
+    background: #1f2937;
+    color: var(--white);
+}
+
+.verify-box button {
+    width: 100%;
+    max-width: 220px;
+    padding: 12px;
+    font-size: 15px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+.verify-box button:hover {
+    background: #e2d89f; /* darker gold on hover */
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #e2d89f;
+    color: #fff;
+}
+
+/* ================= RESULT ================= */
+.result {
+    display: none;
+    background: #020617;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.result.success {
+    border: 1px solid #16a34a;
+}
+
+.result.error {
+    border: 1px solid #dc2626;
+    color: #fecaca;
+}
+
+.status {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: var(--dark-color);
+    color: var(--white);
+    padding: 3rem 2rem 1rem;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<!-- <header>
+    <div class="header-container">
+        <img src="logo.png" alt="Logo">
+        Ohio Heights Holdings Group Limited
+    </div>
+</header> -->
+<div id="header"></div>
+
+<main>
+
+<h1>Secure Storage Verification (SKR)</h1>
+
+<div class="verify-box">
+    <p>Enter your SKR Tracking Code to verify this consignment.</p>
+    <input type="text" id="trackingInput" placeholder="Example: SKR-9F3A-72KD-Q81M">
+    <button onclick="verifyTracking()">Verify Consignment</button>
+</div>
+
+<div id="resultBox" class="result"></div>
+<!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+</main>
+
+<!-- Footer same as other pages -->
+<div id="footer"></div>
+
+<script src="js/include.js"></script>
+
+<script>
+/* ================= STATIC SKR REGISTRY ================= */
+const registry = {
+    "SKR-9F1A-92PD-Q71M": {
+        beneficiary: "Jacob Mutai",
+        commodity: "Refined Gold",
+        weight: "20 KGS",
+        origin: "Nairobi, Kenya",
+        destination: "Designated Refinery",
+        date: "08 August 2025",
+        status: "Stored"
+    },
+    "SKR-2B7L-91XQ-M53K": {
+        beneficiary: "Allan Obiero",
+        commodity: "Gold Doré",
+        weight: "15 KGS",
+        origin: "Kisumu, Kenya",
+        destination: "Accredited Refinery",
+        date: "20 January 2026",
+        status: "Stored"
+    },
+    "SKR-5H2D-63NM-V29P": {
+        beneficiary: "Collins Nganga",
+        commodity: "Refined Gold",
+        weight: "100 KGS",
+        origin: "East African Community",
+        destination: "Dubai",
+        date: "15 March 2026",
+        status: "Stored"
+    }
+};
+
+/* ================= VERIFICATION LOGIC ================= */
+function verifyTracking() {
+    const code = document.getElementById("trackingInput").value.trim().toUpperCase();
+    const result = document.getElementById("resultBox");
+
+    // Reset previous state
+    result.classList.remove('show', 'hidden');
+    result.style.display = 'block';
+    
+    // Small timeout to trigger fade-in
+    setTimeout(() => result.classList.add('show'), 10);
+
+    if (!code.startsWith("SKR-") || code.length < 10) {
+        result.className = "result error show";
+        result.innerHTML = "<strong>Invalid tracking code format.</strong>";
+        return;
+    }
+
+    const record = registry[code];
+
+    if (!record) {
+        result.className = "result error show";
+        result.innerHTML = "<strong>This tracking number is not registered in the SKR system.</strong>";
+        return;
+    }
+
+    result.className = "result success show";
+    result.innerHTML = `
+        <div class="status">✔ VERIFIED CONSIGNMENT</div>
+        <table>
+            <tr><td><strong>Tracking Code</strong></td><td>${code}</td></tr>
+            <tr><td><strong>Name of Beneficiary</strong></td><td>${record.beneficiary}</td></tr>
+            <tr><td><strong>Commodity</strong></td><td>${record.commodity}</td></tr>
+            <tr><td><strong>Weight</strong></td><td>${record.weight}</td></tr>
+            <tr><td><strong>Origin</strong></td><td>${record.origin}</td></tr>
+            <tr><td><strong>Destination</strong></td><td>${record.destination}</td></tr>
+            <tr><td><strong>Date Registered</strong></td><td>${record.date}</td></tr>
+            <tr><td><strong>Status</strong></td><td>${record.status}</td></tr>
+        </table>
+        <a class="btn" href="https://maps.app.goo.gl/1h4azKhrnW4vpi9Z6" target="_blank">
+            📍 Open Storage Location
+        </a>
+        <p style="margin-top:15px;font-size:14px;color:#9ca3af;">
+            This verification confirms that the above consignment is officially registered
+            in the Secure Storage Registry (SKR) system.
+        </p>
+    `;
+}
+
+/* ================= QR AUTO-VERIFY ================= */
+const params = new URLSearchParams(window.location.search);
+const qrCode = params.get("code");
+
+if (qrCode) {
+    document.getElementById("trackingInput").value = qrCode;
+    verifyTracking();
+}
+
+/* ================= SCROLL TO TOP BUTTON ================= */
+const scrollTopBtn = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+/* ================= CLICK OUTSIDE TO CLOSE WITH FADE ================= */
+document.addEventListener('click', function(event) {
+    const resultBox = document.getElementById('resultBox');
+    const verifyBox = document.querySelector('.verify-box');
+
+    if (resultBox.classList.contains('show')) {
+        // Click is outside both resultBox and input/button container
+        if (!resultBox.contains(event.target) && !verifyBox.contains(event.target)) {
+            resultBox.classList.remove('show');
+            resultBox.classList.add('hidden');
+
+            // Wait for the fade animation to finish, then hide completely
+            setTimeout(() => {
+                resultBox.style.display = 'none';
+                resultBox.classList.remove('hidden'); // reset for next use
+            }, 400); // matches CSS transition duration
+        }
+    }
+});
+// Clear input field on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const trackingInput = document.getElementById('trackingInput');
+    trackingInput.value = '';
+});
+
+
+    
+</script>
+
+</script>
+
+
+
+</body>
+</html>

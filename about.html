@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Guardian Hold Security Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <main class="container">
+       <!-- About Us Section -->
+<!-- <section class="about-us" id="about-us">
+    <div class="section-header">
+        <h2>About Our Company</h2>
+        <p>Committed to providing professional security and storage solutions with integrity, expertise, and innovation.</p>
+    </div>
+
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Our Mission</h3>
+            <p>Our mission is to protect lives, property, and assets by delivering reliable, customized security services and state-of-the-art storage solutions. We combine highly trained personnel, advanced technology, and robust operational strategies to ensure that our clients’ assets and interests are fully safeguarded.</p>
+
+            <h3>Our Vision</h3>
+            <p>We envision a world where safety and security are guaranteed, where businesses and individuals can operate confidently, knowing that expert protection and secure storage are always in place. We aim to set the benchmark for professional security and storage services locally and regionally.</p>
+
+            <h3>Our Values</h3>
+            <p>Integrity, professionalism, accountability, and innovation are at the core of everything we do. These values guide our operations, interactions with clients, and the development of our security and storage solutions. We believe that trust is built through consistent excellence and ethical practices.</p>
+
+            <h3>Our Approach</h3>
+            <p>We take a comprehensive approach to security and storage. Each client receives a tailored solution that begins with a risk assessment and ends with ongoing monitoring and support. Our team works closely with clients to ensure the most effective deployment of personnel, technology, and operational procedures, adapting to evolving needs and challenges.</p>
+        </div>
+
+        <div class="about-images">
+            <div class="about-image"><img src="images/about1.jpg" alt="Security Personnel on Duty"></div>
+            <div class="about-image"><img src="images/about2.jpg" alt="Advanced Security Systems"></div>
+            <div class="about-image"><img src="images/about3.jpg" alt="Secure Storage Facilities"></div>
+        </div>
+    </div>
+</section> -->
+<!-- Vision, Mission & Commitment Section -->
+<section class="vision-section" id="vision-mission">
+    <div class="section-header">
+        <h2>Our Vision, Mission & Commitment</h2>
+        <p>Principles that guide our security and storage solutions, ensuring safety, reliability, and trust for our clients</p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="images/about1.png" alt="Vision" style="width:60%; border-radius:50%;">
+            </div>
+            <h3>Vision</h3>
+            <p>
+                To be the most trusted provider of professional security and secure storage solutions, ensuring peace of mind for individuals and organizations across the region.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="images/about2.png" alt="Mission" style="width:60%; border-radius:50%;">
+            </div>
+            <h3>Mission</h3>
+            <p>
+                Deliver comprehensive, reliable, and tailored security and storage services using trained personnel, advanced technology, and proven operational strategies.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="images/about3.jpeg" alt="Commitment" style="width:60%; border-radius:50%;">
+            </div>
+            <h3>Our Commitment</h3>
+            <p>
+                We are dedicated to integrity, professionalism, and excellence in all our operations, ensuring that every client receives trusted protection and secure solutions.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Security Stats Section -->
+<section class="stats">
+    <div class="stats-container display-stats">
+        <div class="stat-item">
+            <div class="stat-number">120+</div>
+            <div class="stat-label">Secured Facilities</div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-number">35+</div>
+            <div class="stat-label">Corporate Clients</div>
+        </div>
+
+       <div class="stat-item">
+        <div class="stat-number">
+            <span data-count="24">0</span><span class="stat-suffix">/7</span>
+        </div>
+        <div class="stat-label">Security Coverage</div>
+    </div>
+
+
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years of Experience</div>
+        </div>
+    </div>
+</section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        ↑
+    </button>
+    <script>
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    //  stats section js
+    
+// Counter animation for stats
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 100;
+
+    const timer = setInterval(() => {
+        current += increment;
+
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 20);
+}
+
+// Trigger counter animation when stats section is visible
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+
+            // Animate ONLY numeric spans
+            document.querySelectorAll('.stat-number span[data-count]').forEach(stat => {
+                const target = parseInt(stat.dataset.count);
+                animateCounter(stat, target);
+            });
+
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('.stats');
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Guardian Hold Security Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <main class="container">
+       <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Need reliable security or storage solutions? Reach out to us today</p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h3>Our Office Location</h3>
+                    <p>To be updated</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div class="info-content">
+                    <h3>Phone Number</h3>
+                    <p>
+                        <a href="tel:+254754276961" style="text-decoration: none; color: inherit;">
+                            To be updated
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                </div>
+                <div class="info-content">
+                    <h3>WhatsApp</h3>
+                    <p>
+                        <a href="https://wa.me/254754276961" target="_blank" style="text-decoration: none; color: inherit;">
+                            To be updated
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div class="info-content">
+                    <h3>Email</h3>
+                    <p>
+                        <a href="mailto:info@securitycompany.co.ke" style="text-decoration: none; color: inherit;">
+                            To be updated
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- <div class="info-item">
+                <div class="info-icon">🕒</div>
+                <div class="info-content">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p>Saturday: 9:00 AM - 2:00 PM</p>
+                </div>
+            </div> -->
+
+            <!-- Responsive Map Section -->
+            <div class="info-item map-item">
+                <div class="map-responsive">
+                    <p>To be updated</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6816.822001661311!2d36.818921342259166!3d-1.2862556863587542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6d9ac76b1%3A0x2ddd74d47025eabc!2sMazel%20Investment%20Ltd!5e1!3m2!1sen!2ske!4v1765440486379!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="secureContactForm" class="secure-contact-form" 
+        action="https://formspree.io/f/xbddlrno" method="POST">
+        
+            <div class="secure-form-group">
+                <label for="sc-name">Full Name</label>
+                <input type="text" id="sc-name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="secure-form-group">
+                <label for="sc-email">Email Address</label>
+                <input type="email" id="sc-email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="secure-form-group">
+                <label for="sc-phone">Phone Number</label>
+                <input type="tel" id="sc-phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <div class="secure-form-group">
+                <label for="sc-subject">Subject</label>
+                <input type="text" id="sc-subject" name="subject" placeholder="Message subject" required>
+            </div>
+
+            <div class="secure-form-group">
+                <label for="sc-message">Message</label>
+                <textarea id="sc-message" name="message"
+                    placeholder="Tell us about your security or storage needs" required></textarea>
+            </div>
+
+            <button type="submit" class="secure-submit-btn">
+                <span class="secure-btn-text">Send Message</span>
+                <span class="secure-btn-spinner" style="display:none;">⏳</span>
+            </button>
+
+            <div class="secure-form-message"></div>
+    </form>
+
+
+    </div>
+</section>
+<script>
+
+document.getElementById("secureContactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent page reload
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const formMessage = form.querySelector(".secure-form-message");
+    const submitBtn = form.querySelector(".secure-submit-btn");
+    const btnText = form.querySelector(".secure-btn-text");
+    const btnSpinner = form.querySelector(".secure-btn-spinner");
+
+    // Show spinner
+    btnText.style.display = "none";
+    btnSpinner.style.display = "inline";
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(response => {
+        btnText.style.display = "inline";
+        btnSpinner.style.display = "none";
+
+        if (response.ok) {
+            formMessage.style.color = "green";
+            formMessage.textContent = "Thank you. Your message has been sent successfully.";
+            form.reset();
+        } else {
+            return response.json().then(data => {
+                formMessage.style.color = "red";
+                if (data.errors) {
+                    formMessage.textContent = data.errors.map(err => err.message).join(", ");
+                } else {
+                    formMessage.textContent = "There was a problem submitting your message.";
+                }
+            });
+        }
+    })
+    .catch(() => {
+        btnText.style.display = "inline";
+        btnSpinner.style.display = "none";
+        formMessage.style.color = "red";
+        formMessage.textContent = "Network error. Please try again later.";
+    });
+});
+</script>
+
+</script>
+       <!-- End Contact Section -->
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+        <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        ↑
+    </button>
+    <script>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+
+</body>
+</html>

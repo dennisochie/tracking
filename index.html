@@ -1,0 +1,262 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO9Eob3uPS5X5..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+    <div id="header"></div>
+
+     <main class="container">
+        <h2>Home</h2>
+        <p>This is the homepage.</p>
+    </main> 
+
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Guardian Hold Security Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+      <!-- Header -->
+    <div id="header"></div>
+
+    <main class="container">
+        <section class="hero-slider" id="home">
+        <div class="slides-container">
+            <div class="slide active" style="background-image: url('images/image1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/image2.jpg');"></div>
+            <div class="slide" style="background-image: url('images/image3.jpg');"></div>
+            <div class="slide" style="background-image: url('images/image4.jpg');"></div>
+        </div> 
+
+        <!-- Hero Content -->
+        <div class="hero-overlay">
+            <h1>Your Trusted Security Partner</h1>
+            <p>Providing reliable, professional security solutions to safeguard people, property, and assets with uncompromising standards</p>
+
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <a href="services.html" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="arrow left" id="prevSlide">&#10094;</button>
+        <button class="arrow right" id="nextSlide">&#10095;</button>
+    </section>
+
+        <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+            <p>Reliable security and storage solutions designed to protect people, property, and assets</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service1.jpg" alt="Manned Guarding Services">
+                </div>
+                <h3>Manned Guarding</h3>
+                <p>Professional, well-trained security personnel providing round-the-clock protection for premises and assets.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service2.jpg" alt="Electronic Security Systems">
+                </div>
+                <h3>Electronic Security Systems</h3>
+                <p>Advanced CCTV, access control, and alarm systems for enhanced monitoring and threat prevention.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service3.jpg" alt="Secure Storage Solutions">
+                </div>
+                <h3>Secure Storage Solutions</h3>
+                <p>Safe, controlled storage facilities designed to protect valuable goods and sensitive materials.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service4.jpg" alt="Risk Assessment and Security Consulting">
+                </div>
+                <h3>Risk Assessment & Consulting</h3>
+                <p>Comprehensive security assessments and expert advisory to identify risks and strengthen protection.</p>
+            </div>
+        </div>
+    </section>
+        <!-- End Services Section -->
+    </main>
+    <!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+    <div class="section-header">
+        <h2>Our Client Feedback</h2>
+        <p>See what our clients have to say about our security and storage services</p>
+    </div>
+
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <p class="testimonial-text">
+                The team provided top-notch security for our corporate offices. Their personnel are professional, reliable, and always vigilant.
+            </p>
+            <div class="testimonial-author">
+                <div class="author-avatar">JK</div>
+                <div class="author-info">
+                    <h4>James Kariuki</h4>
+                    <p>Business Owner</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">
+                Their secure storage solutions gave us peace of mind for sensitive inventory. Highly recommend their professional approach and attention to detail.
+            </p>
+            <div class="testimonial-author">
+                <div class="author-avatar">SM</div>
+                <div class="author-info">
+                    <h4>Susan Muthoni</h4>
+                    <p>Logistics Manager</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">
+                Excellent service! The security personnel were well-trained and the monitoring systems extremely efficient. Our premises have never felt safer.
+            </p>
+            <div class="testimonial-author">
+                <div class="author-avatar">DO</div>
+                <div class="author-info">
+                    <h4>David Ochieng</h4>
+                    <p>Facility Manager</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        ↑
+    </button>
+    <script>
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+            
+const slides = document.querySelectorAll(".slides-container .slide");
+const prevBtn = document.getElementById("prevSlide");
+const nextBtn = document.getElementById("nextSlide");
+
+// Show slide by index
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) slide.classList.add("active");
+    });
+}
+
+// Auto slide every 3 seconds
+let slideInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}, 3000);
+
+// Manual controls
+nextBtn.addEventListener("click", () => {
+    clearInterval(slideInterval);
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+    restartInterval();
+});
+
+prevBtn.addEventListener("click", () => {
+    clearInterval(slideInterval);
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+    restartInterval();
+});
+
+function restartInterval() {
+    slideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }, 3000);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+
+    const showSlide = (index) => {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        currentSlide = (index + totalSlides) % totalSlides; 
+        slides[currentSlide].classList.add("active");
+    };
+
+    
+    let autoSlide = setInterval(() => showSlide(currentSlide + 1), 3000);
+
+    
+    document.getElementById("prevSlide").addEventListener("click", () => {
+        clearInterval(autoSlide);
+        showSlide(currentSlide - 1);
+        autoSlide = setInterval(() => showSlide(currentSlide + 1), 3000);
+    });
+
+    document.getElementById("nextSlide").addEventListener("click", () => {
+        clearInterval(autoSlide);
+        showSlide(currentSlide + 1);
+        autoSlide = setInterval(() => showSlide(currentSlide + 1), 3000);
+    });
+});
+
+</script>
+
+
+</body>
+</html>
+

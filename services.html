@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services | Guardian Hold Security Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <main class="container">
+         <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+            <p>Reliable security and storage solutions designed to protect people, property, and assets</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service1.jpg" alt="Manned Guarding Services">
+                </div>
+                <h3>Manned Guarding</h3>
+                <p>Professional, well-trained security personnel providing round-the-clock protection for premises and assets.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service2.jpg" alt="Electronic Security Systems">
+                </div>
+                <h3>Electronic Security Systems</h3>
+                <p>Advanced CCTV, access control, and alarm systems for enhanced monitoring and threat prevention.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service3.jpg" alt="Secure Storage Solutions">
+                </div>
+                <h3>Secure Storage Solutions</h3>
+                <p>Safe, controlled storage facilities designed to protect valuable goods and sensitive materials.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service4.jpg" alt="Risk Assessment and Security Consulting">
+                </div>
+                <h3>Risk Assessment & Consulting</h3>
+                <p>Comprehensive security assessments and expert advisory to identify risks and strengthen protection.</p>
+            </div>
+        </div>
+    </section>
+        <!-- End Services Section -->
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        ↑
+    </button>
+    <script>
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+
+</body>
+</html>
